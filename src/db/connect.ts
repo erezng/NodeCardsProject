@@ -9,6 +9,7 @@ const connect = async () => {
   mongoose.set("strictQuery", false);
   await mongoose.connect(`mongodb://${HOST}:${PORT}/${DB}`);
   console.log(`Succesfully connected to the database ${DB}`);
+  initDB();
 };
 
 const initDB = () => {
@@ -28,4 +29,21 @@ const initDB = () => {
     }
   });
 };
+// const initDB2 = async () => {
+//   try {
+//     const count = await Role.estimatedDocumentCount();
+//     if (count === 0) {
+//       const roles = ROLES.map((r) => new Role({ name: r }));
+
+//       //dont use forEach with await
+//       for (let role of roles) {
+//         await role.save();
+//         console.log("added ", role.name, "to Roles collection");
+//       }
+//     }
+//   } catch (e) {
+//     console.log("Failed with error: ", e);
+//   }
+// };
+
 export { connect };
