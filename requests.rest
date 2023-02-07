@@ -6,8 +6,8 @@ POST http://localhost:3001/api/auth/signup
 Content-Type: application/json
 
 {
-    "username":"Erez", 
-    "email":"Erez@Batcave.com",
+    "username":"alon", 
+    "email":"alon@Batcave.com",
     "password":"erezGAB@123!g***"
 }
 ### POST to add a card:
